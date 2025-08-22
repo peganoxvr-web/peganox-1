@@ -1,101 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>موقع بسيط</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مجموعة الألعاب</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8578713031503395"
      crossorigin="anonymous"></script>
-</script>
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <div class="brand">موقعي البسيط</div>
-        <button class="menu-toggle" id="menuToggle" aria-label="قائمة التنقل">☰</button>
-        <nav class="site-nav" id="siteNav">
-          <ul>
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#about">عن الموقع</a></li>
-            <li><a href="#contact">اتصل بنا</a></li>
-          </ul>
-        </nav>
-      </div>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎮 مجموعة الألعاب</h1>
+            <button id="homeBtn" class="home-btn hidden">🏠 الرئيسية</button>
+        </div>
     </header>
 
-    <main>
-      <section id="home" class="section hero">
-        <div class="container">
-          <h1>أهلاً بك في موقعي</h1>
-          <p>
-            هذا نموذج لموقع بسيط يحتوي على أقسام متعددة مع تصميم جميل وتفاعل
-            بسيط باستخدام JavaScript.
-          </p>
-          <a class="btn primary" href="#about">ابدأ من هنا</a>
-        </div>
-      </section>
+    <main class="main">
+        <!-- الصفحة الرئيسية -->
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="welcome">
+                    <h2>مرحباً بك في مجموعة الألعاب!</h2>
+                    <p>اختر لعبتك المفضلة من القائمة أدناه</p>
+                </div>
+                
+                <div class="games-grid">
+                    <div class="game-card" data-game="space">
+                        <div class="game-icon">🚀</div>
+                        <h3>لعبة الفضاء</h3>
+                        <p>احمِ الأرض من الغزاة!</p>
+                        <button class="play-btn">العب الآن</button>
+                    </div>
 
-      <section id="about" class="section about">
-        <div class="container grid-2">
-          <div>
-            <h2>عن الموقع</h2>
-            <p>
-              يهدف هذا الموقع لاستعراض مثال عملي لبناء صفحة ويب بسيطة باستخدام
-              HTML و CSS، مع إضافة تفاعلات خفيفة عبر JavaScript.
-            </p>
-            <button class="btn outline" id="aboutBtn">اعرف المزيد</button>
-            <div class="message hidden" id="aboutMessage" role="status" aria-live="polite"></div>
-          </div>
-          <div class="card">
-            <h3>المزايا</h3>
-            <ul>
-              <li>تصميم بسيط ومتجاوب</li>
-              <li>تنقل سهل بين الأقسام</li>
-              <li>تفاعلات لطيفة بالأزرار والنماذج</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+                    <div class="game-card" data-game="puzzle">
+                        <div class="game-icon">🧩</div>
+                        <h3>الأحجية المنزلقة</h3>
+                        <p>رتب الأرقام في المكان الصحيح</p>
+                        <button class="play-btn">العب الآن</button>
+                    </div>
 
-      <section id="contact" class="section contact">
-        <div class="container">
-          <h2>اتصل بنا</h2>
-          <form id="contactForm" class="form-card" novalidate>
-            <div class="form-row">
-              <label for="name">الاسم</label>
-              <input type="text" id="name" name="name" placeholder="اكتب اسمك" required />
-              <small class="error" id="nameError"></small>
+                    <div class="game-card" data-game="tictactoe">
+                        <div class="game-icon">⭕</div>
+                        <h3>لعبة XO</h3>
+                        <p>لعبة كلاسيكية للاعبين</p>
+                        <button class="play-btn">العب الآن</button>
+                    </div>
+
+                    <div class="game-card" data-game="snake">
+                        <div class="game-icon">🐍</div>
+                        <h3>لعبة الثعبان</h3>
+                        <p>اجمع الطعام ولا تصطدم!</p>
+                        <button class="play-btn">العب الآن</button>
+                    </div>
+
+                    <div class="game-card" data-game="memory">
+                        <div class="game-icon">🧠</div>
+                        <h3>لعبة الذاكرة</h3>
+                        <p>اعثر على الأزواج المتطابقة</p>
+                        <button class="play-btn">العب الآن</button>
+                    </div>
+                </div>
             </div>
-            <div class="form-row">
-              <label for="email">البريد الإلكتروني</label>
-              <input type="email" id="email" name="email" placeholder="name@example.com" required />
-              <small class="error" id="emailError"></small>
+        </section>
+
+        <!-- لعبة الفضاء -->
+        <section id="space" class="section game-section">
+            <div class="container">
+                <div class="game-header">
+                    <h2>🚀 لعبة الفضاء</h2>
+                    <div class="game-controls">
+                        <div class="score">النقاط: <span id="spaceScore">0</span></div>
+                        <div class="lives">الحياة: <span id="spaceLives">3</span></div>
+                        <button id="spaceStart" class="control-btn">ابدأ</button>
+                        <button id="spacePause" class="control-btn">إيقاف</button>
+                    </div>
+                </div>
+                <canvas id="spaceCanvas" width="800" height="600"></canvas>
+                <div class="game-instructions">
+                    <p><strong>التحكم:</strong> استخدم الأسهم أو WASD للحركة، مسطرة المسافة للإطلاق</p>
+                </div>
             </div>
-            <div class="form-actions">
-              <button type="submit" class="btn primary">إرسال</button>
+        </section>
+
+        <!-- لعبة الأحجية -->
+        <section id="puzzle" class="section game-section">
+            <div class="container">
+                <div class="game-header">
+                    <h2>🧩 الأحجية المنزلقة</h2>
+                    <div class="game-controls">
+                        <div class="moves">الحركات: <span id="puzzleMoves">0</span></div>
+                        <button id="puzzleShuffle" class="control-btn">خلط جديد</button>
+                    </div>
+                </div>
+                <div id="puzzleBoard" class="puzzle-board"></div>
+                <div class="game-instructions">
+                    <p><strong>الهدف:</strong> رتب الأرقام من 1 إلى 15 بالترتيب الصحيح</p>
+                </div>
             </div>
-            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-          </form>
-        </div>
-      </section>
+        </section>
+
+        <!-- لعبة XO -->
+        <section id="tictactoe" class="section game-section">
+            <div class="container">
+                <div class="game-header">
+                    <h2>⭕ لعبة XO</h2>
+                    <div class="game-controls">
+                        <div class="turn">الدور: <span id="currentPlayer">X</span></div>
+                        <button id="tictactoeReset" class="control-btn">لعبة جديدة</button>
+                    </div>
+                </div>
+                <div id="tictactoeBoard" class="tictactoe-board"></div>
+                <div id="gameResult" class="game-result"></div>
+                <div class="game-instructions">
+                    <p><strong>الهدف:</strong> احصل على ثلاث علامات متتالية أفقياً أو عمودياً أو قطرياً</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- لعبة الثعبان -->
+        <section id="snake" class="section game-section">
+            <div class="container">
+                <div class="game-header">
+                    <h2>🐍 لعبة الثعبان</h2>
+                    <div class="game-controls">
+                        <div class="score">النقاط: <span id="snakeScore">0</span></div>
+                        <button id="snakeStart" class="control-btn">ابدأ</button>
+                        <button id="snakePause" class="control-btn">إيقاف</button>
+                    </div>
+                </div>
+                <canvas id="snakeCanvas" width="400" height="400"></canvas>
+                <div class="game-instructions">
+                    <p><strong>التحكم:</strong> استخدم الأسهم للحركة، لا تصطدم بالجدران أو بنفسك!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- لعبة الذاكرة -->
+        <section id="memory" class="section game-section">
+            <div class="container">
+                <div class="game-header">
+                    <h2>🧠 لعبة الذاكرة</h2>
+                    <div class="game-controls">
+                        <div class="score">النقاط: <span id="memoryScore">0</span></div>
+                        <div class="pairs">الأزواج: <span id="memoryPairs">0/8</span></div>
+                        <button id="memoryReset" class="control-btn">لعبة جديدة</button>
+                    </div>
+                </div>
+                <div id="memoryBoard" class="memory-board"></div>
+                <div class="game-instructions">
+                    <p><strong>الهدف:</strong> اعثر على جميع الأزواج المتطابقة في أقل عدد من المحاولات</p>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p>© <span id="year"></span> موقعي البسيط. جميع الحقوق محفوظة.</p>
-      </div>
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 مجموعة الألعاب - استمتع باللعب! 🎮</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
-  </body>
-  </html>
-
-
-
-
-
-
+</body>
+</html>
