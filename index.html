@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>موقع بسيط</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">موقعي البسيط</div>
+        <button class="menu-toggle" id="menuToggle" aria-label="قائمة التنقل">☰</button>
+        <nav class="site-nav" id="siteNav">
+          <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">عن الموقع</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="section hero">
+        <div class="container">
+          <h1>أهلاً بك في موقعي</h1>
+          <p>
+            هذا نموذج لموقع بسيط يحتوي على أقسام متعددة مع تصميم جميل وتفاعل
+            بسيط باستخدام JavaScript.
+          </p>
+          <a class="btn primary" href="#about">ابدأ من هنا</a>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <div class="container grid-2">
+          <div>
+            <h2>عن الموقع</h2>
+            <p>
+              يهدف هذا الموقع لاستعراض مثال عملي لبناء صفحة ويب بسيطة باستخدام
+              HTML و CSS، مع إضافة تفاعلات خفيفة عبر JavaScript.
+            </p>
+            <button class="btn outline" id="aboutBtn">اعرف المزيد</button>
+            <div class="message hidden" id="aboutMessage" role="status" aria-live="polite"></div>
+          </div>
+          <div class="card">
+            <h3>المزايا</h3>
+            <ul>
+              <li>تصميم بسيط ومتجاوب</li>
+              <li>تنقل سهل بين الأقسام</li>
+              <li>تفاعلات لطيفة بالأزرار والنماذج</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div class="container">
+          <h2>اتصل بنا</h2>
+          <form id="contactForm" class="form-card" novalidate>
+            <div class="form-row">
+              <label for="name">الاسم</label>
+              <input type="text" id="name" name="name" placeholder="اكتب اسمك" required />
+              <small class="error" id="nameError"></small>
+            </div>
+            <div class="form-row">
+              <label for="email">البريد الإلكتروني</label>
+              <input type="email" id="email" name="email" placeholder="name@example.com" required />
+              <small class="error" id="emailError"></small>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn primary">إرسال</button>
+            </div>
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> موقعي البسيط. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
